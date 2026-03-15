@@ -1,50 +1,299 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
+
 <meta charset="UTF-8">
 <title>Әдеби символдар зерттеуі</title>
-<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins;
+background:#0f2027;
+background:linear-gradient(to right,#2c5364,#203a43,#0f2027);
+color:white;
+}
+
+header{
+height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+header h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+header p{
+font-size:20px;
+opacity:0.8;
+}
+
+nav{
+background:white;
+padding:20px;
+text-align:center;
+}
+
+nav a{
+margin:20px;
+text-decoration:none;
+font-weight:600;
+color:#333;
+}
+
+section{
+padding:80px 10%;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+color:black;
+border-radius:12px;
+padding:25px;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+color:black;
+}
+
+th,td{
+padding:15px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+.quiz{
+background:white;
+color:black;
+padding:30px;
+border-radius:10px;
+text-align:center;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+background:#2c5364;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#203a43;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:0.7;
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
+
 <h1>Әдебиеттегі символдар</h1>
-<p>«Шыңырау» мен «Шал мен теңіз» шығармаларын салыстырмалы талдау</p>
+
+<p>
+Ә.Кекілбаевтың «Шыңырау» және  
+Э.Хемингуэйдің «Шал мен теңіз» шығармаларын  
+салыстырмалы зерттеу
+</p>
+
 </header>
 
 <nav>
-<a href="index.html">Басты бет</a>
-<a href="characters.html">Кейіпкерлер</a>
-<a href="symbols.html">Символдар</a>
-<a href="comparison.html">Салыстыру</a>
-<a href="quiz.html">Тест</a>
+
+<a href="#characters">Кейіпкерлер</a>
+<a href="#symbols">Символдар</a>
+<a href="#comparison">Салыстыру</a>
+<a href="#quiz">Тест</a>
+
 </nav>
 
-<section class="container">
+<section id="characters">
+
+<h2>Негізгі кейіпкерлер</h2>
+
+<div class="cards">
 
 <div class="card">
-<h2>Жоба туралы</h2>
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
+<h3>Еңсеп</h3>
+
 <p>
-Бұл сайт Әбіш Кекілбаевтың «Шыңырау» повесі мен 
-Эрнест Хемингуэйдің «Шал мен теңіз» шығармаларындағы
-символдар мен жалғыздық мотивін түсіндіруге арналған.
+«Шыңырау» повесінің басты кейіпкері.  
+Ол өз еңбегі арқылы өмірдің мәнін табуға тырысады.
 </p>
+
 </div>
 
 <div class="card">
-<h2>Негізгі идея</h2>
+
+<img src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146d">
+
+<h3>Сантьяго</h3>
+
 <p>
-Екі шығармада да кейіпкерлер жалғыздық арқылы
-рухани күшке жетіп, өмірдің қиындықтарына қарсы тұрады.
+«Шал мен теңіз» шығармасының басты кейіпкері.  
+Ол теңізде жалғыз күресіп, рухани күшін көрсетеді.
 </p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="symbols">
+
+<h2>Шығармалардағы символдар</h2>
+
+<table>
+
+<tr>
+<th>Символ</th>
+<th>Мағынасы</th>
+</tr>
+
+<tr>
+<td>Шыңырау</td>
+<td>Тағдыр және рухани тереңдік</td>
+</tr>
+
+<tr>
+<td>Теңіз</td>
+<td>Өмір кеңістігі</td>
+</tr>
+
+<tr>
+<td>Үлкен балық</td>
+<td>Адамның күресі мен мақсаты</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="comparison">
+
+<h2>Кейіпкерлерді салыстыру</h2>
+
+<table>
+
+<tr>
+<th>Еңсеп</th>
+<th>Сантьяго</th>
+</tr>
+
+<tr>
+<td>Құдық қазушы</td>
+<td>Балықшы</td>
+</tr>
+
+<tr>
+<td>Еңбек арқылы жалғыздық</td>
+<td>Теңіздегі жалғыздық</td>
+</tr>
+
+<tr>
+<td>Табандылық</td>
+<td>Төзімділік</td>
+</tr>
+
+<tr>
+<td>Мақсат</td>
+<td>Күрес</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="quiz">
+
+<h2>Символдар бойынша тест</h2>
+
+<div class="quiz">
+
+<p>«Шыңырау» символы нені білдіреді?</p>
+
+<button onclick="answer('wrong')">Табиғат</button>
+<button onclick="answer('correct')">Тағдыр</button>
+<button onclick="answer('wrong')">Жол</button>
+
+<p id="result"></p>
+
 </div>
 
 </section>
 
 <footer>
+
 <p>Ғылыми жоба сайты</p>
+
 </footer>
+
+<script>
+
+function answer(x){
+
+if(x==="correct"){
+document.getElementById("result").innerHTML="Дұрыс жауап!";
+}
+
+else{
+document.getElementById("result").innerHTML="Қате жауап.";
+}
+
+}
+
+</script>
 
 </body>
 </html>
