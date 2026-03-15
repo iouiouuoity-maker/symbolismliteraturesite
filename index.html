@@ -265,6 +265,8 @@ opacity:0.7;
 
 <p id="result"></p>
 
+<button id="nextBtn" onclick="nextQuestion()" style="display:none;">Келесі сұрақ</button>
+
 </div>
 
 </section>
@@ -297,19 +299,23 @@ correct:0
 
 ];
 
-function loadQuiz(){
+let current = 0;
+let score = 0;
 
-let random = Math.floor(Math.random()*quiz.length);
+function loadQuestion(){
 
-let q = quiz[random];
+document.getElementById("result").innerHTML="";
+document.getElementById("nextBtn").style.display="none";
+
+let q = quiz[current];
 
 document.getElementById("question").innerText = q.question;
 
-let answersHTML = "";
+let answersHTML="";
 
 q.answers.forEach((a,index)=>{
 
-answersHTML += `<button onclick="check(${index},${q.correct})">${a}</button>`
+answersHTML += `<button onclick="check(${index})">${a}</button>`
 
 });
 
@@ -317,19 +323,50 @@ document.getElementById("answers").innerHTML = answersHTML;
 
 }
 
-function check(answer,correct){
+function check(answer){
 
-if(answer==correct){
-document.getElementById("result").innerText="Дұрыс жауап!";
+let q = quiz[current];
+
+if(answer===q.correct){
+
+document.getElementById("result").innerHTML="Дұрыс!";
+score++;
+
 }
 
 else{
-document.getElementById("result").innerText="Қате жауап.";
-}
+
+document.getElementById("result").innerHTML="Қате.";
 
 }
 
-loadQuiz();
+document.getElementById("nextBtn").style.display="inline-block";
+
+}
+
+function nextQuestion(){
+
+current++;
+
+if(current < quiz.length){
+
+loadQuestion();
+
+}
+
+else{
+
+document.getElementById("question").innerHTML="Тест аяқталды";
+document.getElementById("answers").innerHTML="";
+document.getElementById("result").innerHTML="Сіздің нәтижеңіз: "+score+" / "+quiz.length;
+
+document.getElementById("nextBtn").style.display="none";
+
+}
+
+}
+
+loadQuestion();
 
 </script>
 
