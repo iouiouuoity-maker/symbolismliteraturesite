@@ -194,29 +194,27 @@ opacity:0.7;
 
 <h2>Шығармалардағы символдар</h2>
 
-<table>
+<div class="cards">
 
-<tr>
-<th>Символ</th>
-<th>Мағынасы</th>
-</tr>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<h3>Шыңырау</h3>
+<p>Тағдыр мен адамның рухани тереңдігін білдіретін символ.</p>
+</div>
 
-<tr>
-<td>Шыңырау</td>
-<td>Тағдыр және рухани тереңдік</td>
-</tr>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<h3>Теңіз</h3>
+<p>Өмір кеңістігін және адамның өмір жолын білдіреді.</p>
+</div>
 
-<tr>
-<td>Теңіз</td>
-<td>Өмір кеңістігі</td>
-</tr>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1524704796725-9fc3044a58b2">
+<h3>Үлкен балық</h3>
+<p>Адамның мақсаты мен өмірлік күресін бейнелейді.</p>
+</div>
 
-<tr>
-<td>Үлкен балық</td>
-<td>Адамның күресі мен мақсаты</td>
-</tr>
-
-</table>
+</div>
 
 </section>
 
@@ -261,11 +259,9 @@ opacity:0.7;
 
 <div class="quiz">
 
-<p>«Шыңырау» символы нені білдіреді?</p>
+<p id="question"></p>
 
-<button onclick="answer('wrong')">Табиғат</button>
-<button onclick="answer('correct')">Тағдыр</button>
-<button onclick="answer('wrong')">Жол</button>
+<div id="answers"></div>
 
 <p id="result"></p>
 
@@ -274,26 +270,71 @@ opacity:0.7;
 </section>
 
 <footer>
-
 <p>Ғылыми жоба сайты</p>
-
 </footer>
 
 <script>
 
-function answer(x){
+const quiz = [
 
-if(x==="correct"){
-document.getElementById("result").innerHTML="Дұрыс жауап!";
+{
+question:"«Шыңырау» символы нені білдіреді?",
+answers:["Табиғат","Тағдыр","Жол"],
+correct:1
+},
+
+{
+question:"«Шал мен теңіз» шығармасында теңіз нені білдіреді?",
+answers:["Өмір кеңістігі","Қала","Жер"],
+correct:0
+},
+
+{
+question:"Үлкен балық символы нені білдіреді?",
+answers:["Мақсат","Демалыс","Саяхат"],
+correct:0
+}
+
+];
+
+function loadQuiz(){
+
+let random = Math.floor(Math.random()*quiz.length);
+
+let q = quiz[random];
+
+document.getElementById("question").innerText = q.question;
+
+let answersHTML = "";
+
+q.answers.forEach((a,index)=>{
+
+answersHTML += `<button onclick="check(${index},${q.correct})">${a}</button>`
+
+});
+
+document.getElementById("answers").innerHTML = answersHTML;
+
+}
+
+function check(answer,correct){
+
+if(answer==correct){
+document.getElementById("result").innerText="Дұрыс жауап!";
 }
 
 else{
-document.getElementById("result").innerHTML="Қате жауап.";
+document.getElementById("result").innerText="Қате жауап.";
 }
 
 }
+
+loadQuiz();
 
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
